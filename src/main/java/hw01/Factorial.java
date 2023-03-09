@@ -1,8 +1,10 @@
+package hw01;
+
 public class Factorial {
 
     public static void main(String[] args) {
-        System.out.println("Factorial of 5 (R): "+factorialRecursive(5));
-        System.out.println("Factorial of 5 (I): "+factorialIterative(5));
+        System.out.println("hw01.Factorial of 5 (R): "+factorialRecursive(5));
+        System.out.println("hw01.Factorial of 5 (I): "+factorialIterative(5));
     }
 
     public static int factorialRecursive(int n){

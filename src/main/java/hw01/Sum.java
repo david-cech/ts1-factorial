@@ -1,8 +1,10 @@
+package hw01;
+
 public class Sum {
 
     public static void main(String[] args) {
-        System.out.println("Sum of 1 through 5 (R): "+sumRecursive(5));
-        System.out.println("Sum of 1 through 5 (I): "+sumIterative(5));
+        System.out.println("hw01.Sum of 1 through 5 (R): "+sumRecursive(5));
+        System.out.println("hw01.Sum of 1 through 5 (I): "+sumIterative(5));
     }
 
     public static int sumRecursive(int n){
