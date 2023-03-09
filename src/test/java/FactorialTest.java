@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 public class FactorialTest {
 
     @Test
-    public void factorialRecursiveTest() {
+    public void factorialRecursive_factorialOfTwo_2() {
         Assertions.assertEquals(2, Factorial.factorialRecursive(2));
     }
 
     @Test
-    public void factorialIterativeTest() {
+    public void factorialIterative_factorialOfThree_6() {
         Assertions.assertEquals(6, Factorial.factorialIterative(3));
     }
 
