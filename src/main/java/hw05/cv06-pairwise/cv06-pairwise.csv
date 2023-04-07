@@ -1,0 +1,28 @@
+# ACTS Test Suite Generation: Fri Apr 07 11:33:16 CEST 2023
+#  '*' represents don't care value 
+# Degree of interaction coverage: 2
+# Number of parameters: 5
+# Maximum number of values per parameter: 7
+# Number of configurations: 21
+Registrace,Sleva,Destinace,Jmeno,Narozeni
+false,Student,New York,NULL,01.01.2000
+true,Duchodce,New Delhi,会意字,01.01.2000
+false,Kupon,Berlin,Jan Novak,01.01.2000
+true,Student,New Delhi,Jan Novak,01.01.1200
+false,Duchodce,Berlin,NULL,01.01.1200
+true,Kupon,New York,会意字,01.01.1200
+false,Student,Berlin,会意字,01.01.2500
+true,Duchodce,New York,Jan Novak,01.01.2500
+false,Kupon,New Delhi,NULL,01.01.2500
+true,Student,Berlin,会意字,05/20/2000
+false,Duchodce,New York,Jan Novak,05/20/2000
+true,Kupon,New Delhi,NULL,05/20/2000
+false,Student,Berlin,会意字,2000-05-20
+true,Duchodce,New York,Jan Novak,2000-05-20
+false,Kupon,New Delhi,NULL,2000-05-20
+false,Student,Berlin,会意字,123456
+true,Duchodce,New York,Jan Novak,123456
+false,Kupon,New Delhi,NULL,123456
+false,Student,Berlin,会意字,dvanacteho ledna dva tisice
+true,Duchodce,New York,Jan Novak,dvanacteho ledna dva tisice
+true,Kupon,New Delhi,NULL,dvanacteho ledna dva tisice
