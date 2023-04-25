@@ -12,42 +12,122 @@ import java.util.stream.Stream;
 public class StandardItemTest {
 
     @Test
-    public void StandardItem_ConstructorSetsProperties_StandardItem() {
+    public void StandardItem_ConstructorSetsId_StandardItem() {
         StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
 
         Assertions.assertEquals(1, item.getID());
+    }
+
+    @Test
+    public void StandardItem_ConstructorSetsName_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+
         Assertions.assertEquals("TestItem", item.getName());
+    }
+
+    @Test
+    public void StandardItem_ConstructorSetsPrice_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+
         Assertions.assertEquals(0.99f, item.getPrice());
+    }
+
+    @Test
+    public void StandardItem_ConstructorSetsCategory_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+
         Assertions.assertEquals("TestCategory", item.getCategory());
+    }
+
+    @Test
+    public void StandardItem_ConstructorSetsLoyaltyPoints_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+
         Assertions.assertEquals(10, item.getLoyaltyPoints());
     }
 
     @Test
-    public void copy_CopiesProperties_StandardItem() {
+    public void copy_CopiesId_StandardItem() {
         StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
         StandardItem copy = item.copy();
 
         Assertions.assertEquals(item.getID(), copy.getID());
+    }
+
+    @Test
+    public void copy_CopiesName_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
+
         Assertions.assertEquals(item.getName(), copy.getName());
+    }
+
+    @Test
+    public void copy_CopiesPrice_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
+
         Assertions.assertEquals(item.getPrice(), copy.getPrice());
+    }
+
+    @Test
+    public void copy_CopiesCategory_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
+
         Assertions.assertEquals(item.getCategory(), copy.getCategory());
+    }
+
+    @Test
+    public void copy_CopiesLoyaltyPoints_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
+
         Assertions.assertEquals(item.getLoyaltyPoints(), copy.getLoyaltyPoints());
     }
 
     @Test
-    public void copy_CopyDoesNotChangeWhenOriginalChanges_StandardItem() {
+    public void copy_CopyIdDoesNotChangeWhenOriginalIdChanges_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
+        item.setID(2);
+
+        Assertions.assertEquals(1, copy.getID());
+    }
+
+    @Test
+    public void copy_CopyNameDoesNotChangeWhenOriginalNameChanges_StandardItem() {
         StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
         StandardItem copy = item.copy();
         item.setName("NewName");
-        item.setID(2);
+
+        Assertions.assertEquals("TestItem", copy.getName());
+    }
+
+    @Test
+    public void copy_CopyPriceDoesNotChangeWhenOriginalPriceChanges_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
         item.setPrice(2.0f);
+
+        Assertions.assertEquals(0.99f, copy.getPrice());
+    }
+
+    @Test
+    public void copy_CopyCategoryDoesNotChangeWhenOriginalCategoryChanges_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
         item.setCategory("NewCategory");
+
+        Assertions.assertEquals("TestCategory", copy.getCategory());
+    }
+
+    @Test
+    public void copy_CopyLoyaltyPointsDoNotChangeWhenOriginalLoyaltyPointsChange_StandardItem() {
+        StandardItem item = new StandardItem(1, "TestItem", 0.99f, "TestCategory", 10);
+        StandardItem copy = item.copy();
         item.setLoyaltyPoints(20);
 
-        Assertions.assertEquals(1, copy.getID());
-        Assertions.assertEquals("TestItem", copy.getName());
-        Assertions.assertEquals(0.99f, copy.getPrice());
-        Assertions.assertEquals("TestCategory", copy.getCategory());
         Assertions.assertEquals(10, copy.getLoyaltyPoints());
     }
 
@@ -74,6 +154,6 @@ public class StandardItemTest {
                 Arguments.of(new StandardItem(1, "TestItem", 3f, "TestCategory", 10)),
                 Arguments.of(new StandardItem(1, "TestItem", 0.99f, "FooCategory", 10)),
                 Arguments.of(new StandardItem(1, "TestItem", 0.99f, "TestCategory", 300))
-                );
+        );
     }
 }
